@@ -23,7 +23,7 @@ export class UserService {
         this.location = pos.coords;
         const lat = this.location.latitude;
         const lon = this.location.longitude;
-        return this.http.get("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=c072b5a32bcaa215267018db1977b7ed&units=metric")
+        return this.http.get("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=c072b5a32bcaa215267018db1977b7ed&units=metric")
         .map((response:Response) => response.json()).toPromise().then(
           (data)=>{
             this.weather = new Note(data.name,
